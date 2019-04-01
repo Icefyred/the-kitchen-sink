@@ -12,13 +12,12 @@ public class ContactRepository {
 	}
 
 	public Contact getByName(String stringValue) {
-		
+
 		for (Contact contact : contactsInMemory) {
-			if(stringValue.equals(contact.getFirstName()) || stringValue.equals(contact.getLastName())){
-				//System.out.println("Entrou");
+			if (stringValue.equals(contact.getFirstName()) || stringValue.equals(contact.getLastName())) {
 				return contact;
 			}
-        }
+		}
 		return null;
 	}
 }
