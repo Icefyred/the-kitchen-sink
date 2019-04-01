@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ContactController {
+	private ContactRepository contactRepository = new ContactRepository();
 
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
-	public Contact contact(@RequestParam("id") String stringValue) {
-		return new Contact("Diogo", "Castilho", 969168884, "dcastilho001@hotmail.com");
+	public Contact contact(@RequestParam("name") String nameParamValue) {
+		return contactRepository.getByName(nameParamValue);
 	}
 
 	@RequestMapping(value = "/contacts", method = RequestMethod.POST)
@@ -20,6 +21,7 @@ public class ContactController {
 		System.out.println("Last Name: " + contact.getLastName());
 		System.out.println("Phone Number: " + contact.getPhoneNumber());
 		System.out.println("Email Address: " + contact.getEmailAddress());
+		contactRepository.insert(contact);
 		return contact;
 	}
 }
