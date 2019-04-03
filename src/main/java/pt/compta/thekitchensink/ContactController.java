@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import pt.compta.thekitchensink.repository.ContactRepository;
+
 @RestController
 public class ContactController {
 	private ContactRepository contactRepository = new ContactRepository();

@@ -1,7 +1,9 @@
-package pt.compta.thekitchensink;
+package pt.compta.thekitchensink.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import pt.compta.thekitchensink.Contact;
 
 public class ContactRepository {
 	private List<Contact> contactsInMemory = new ArrayList<>();
