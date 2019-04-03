@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import pt.compta.thekitchensink.Contact;
-import pt.compta.thekitchensink.repository.ContactRepository;
+import pt.compta.thekitchensink.service.ContactService;
 
 @RestController
 public class ContactController {
-	private ContactRepository contactRepository = new ContactRepository();
+
+	private ContactService contactService = new ContactService();
 
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
 	public Contact contact(@RequestParam("name") String nameParamValue) {
-		return contactRepository.getByName(nameParamValue);
+		return contactService.getContact(nameParamValue);
 	}
 
 	@RequestMapping(value = "/contacts", method = RequestMethod.POST)
@@ -24,7 +25,7 @@ public class ContactController {
 		System.out.println("Last Name: " + contact.getLastName());
 		System.out.println("Phone Number: " + contact.getPhoneNumber());
 		System.out.println("Email Address: " + contact.getEmailAddress());
-		contactRepository.insert(contact);
+		contactService.createContact(contact);
 		return contact;
 	}
 }
