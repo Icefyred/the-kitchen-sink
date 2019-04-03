@@ -1,4 +1,4 @@
-package pt.compta.thekitchensink;
+package pt.compta.thekitchensink.controller;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import pt.compta.thekitchensink.Contact;
 import pt.compta.thekitchensink.repository.ContactRepository;
 
 @RestController
