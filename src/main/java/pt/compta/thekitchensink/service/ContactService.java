@@ -15,17 +15,12 @@ public class ContactService {
 	}
 
 	public Contact createContact(Contact contact) {
-		if (doesContactExist(contact)) {
+		if ((contactRepository.getByName(contact.getFirstName()) != null)
+				|| (contactRepository.getByName(contact.getLastName()) != null)) {
 			throw new IllegalArgumentException();
 		} else {
 			contactRepository.insert(contact);
 		}
 		return contact;
-	}
-
-	public boolean doesContactExist(Contact contact) {
-		boolean isTheContactAlreadyInTheList = contactRepository.getByName(contact.getFirstName()) != null
-				|| contactRepository.getByName(contact.getLastName()) != null;
-		return isTheContactAlreadyInTheList;
 	}
 }
