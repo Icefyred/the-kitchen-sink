@@ -1,11 +1,12 @@
-package pt.compta.thekitchensink;
+package pt.compta.thekitchensink.repository;
 
-public class Book {
+public class BookEntity {
+
 	private String bookISBN;
 	private String bookTitle;
 	private String bookDescription;
 
-	public Book(String bookISBN, String bookTitle, String bookDescription) {
+	public BookEntity(String bookISBN, String bookTitle, String bookDescription) {
 		this.bookISBN = bookISBN;
 		this.bookTitle = bookTitle;
 		this.bookDescription = bookDescription;

@@ -3,19 +3,17 @@ package pt.compta.thekitchensink.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import pt.compta.thekitchensink.Book;
-
 public class BookRepository {
-	private List<Book> booksInMemory = new ArrayList<>();
+	private List<BookEntity> booksInMemory = new ArrayList<>();
 
-	public void insertBookInTheList(Book book) {
+	public void insertBookInTheList(BookEntity book) {
 		booksInMemory.add(book);
 		System.out.println("Inserted object: " + book);
 	}
 
-	public Book getBookByName(String bookName) {
+	public BookEntity getBookByName(String bookName) {
 
-		for (Book book : booksInMemory) {
+		for (BookEntity book : booksInMemory) {
 			if (bookName.equals(book.getBookTitle())) {
 				return book;
 			}
