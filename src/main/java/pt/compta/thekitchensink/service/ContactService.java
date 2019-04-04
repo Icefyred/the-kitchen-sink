@@ -1,8 +1,11 @@
 package pt.compta.thekitchensink.service;
 
+import org.springframework.stereotype.Service;
+
 import pt.compta.thekitchensink.Contact;
 import pt.compta.thekitchensink.repository.ContactRepository;
 
+@Service
 public class ContactService {
 	private ContactRepository contactRepository = new ContactRepository();
 

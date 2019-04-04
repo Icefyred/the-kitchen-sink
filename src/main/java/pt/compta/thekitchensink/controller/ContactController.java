@@ -1,5 +1,6 @@
 package pt.compta.thekitchensink.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,8 +12,8 @@ import pt.compta.thekitchensink.service.ContactService;
 
 @RestController
 public class ContactController {
-
-	private ContactService contactService = new ContactService();
+	@Autowired
+	private ContactService contactService;
 
 	@GetMapping("/contacts")
 	public Contact contact(@RequestParam("name") String nameParamValue) {
