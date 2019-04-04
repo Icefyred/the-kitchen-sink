@@ -10,7 +10,6 @@ public class ContactRepository {
 
 	public void insert(Contact contact) {
 		contactsInMemory.add(contact);
-		System.out.println("Inserted object: " + contact);
 	}
 
 	public Contact getByName(String stringValue) {

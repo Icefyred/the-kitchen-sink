@@ -8,7 +8,6 @@ public class BookRepository {
 
 	public void insertBookInTheList(BookEntity book) {
 		booksInMemory.add(book);
-		System.out.println("Inserted object: " + book);
 	}
 
 	public BookEntity getBookByName(String bookName) {

@@ -24,8 +24,7 @@ public class ContactService {
 	}
 
 	public boolean doesContactExist(Contact contact) {
-		boolean isTheContactAlreadyInTheList = contactRepository.getByName(contact.getFirstName()) != null
+		return contactRepository.getByName(contact.getFirstName()) != null
 				|| contactRepository.getByName(contact.getLastName()) != null;
-		return isTheContactAlreadyInTheList;
 	}
 }

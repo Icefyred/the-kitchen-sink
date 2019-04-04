@@ -27,8 +27,6 @@ public class BookService {
 	}
 
 	public boolean doesBookExist(Book book) {
-		boolean isTheBookAlreadyInTheList = bookRepository.getBookByName(book.getBookTitle()) != null
-				|| bookRepository.getBookByName(book.getBookTitle()) != null;
-		return isTheBookAlreadyInTheList;
+		return bookRepository.getBookByName(book.getBookTitle()) != null;
 	}
 }
