@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import pt.compta.thekitchensink.Book;
 import pt.compta.thekitchensink.service.BookService;
 
-@RestController("/books")
+@RestController
 public class BookController {
 	private BookService bookService = new BookService();
 
-	@GetMapping
+	@GetMapping("/books")
 	public Book book(@RequestParam("title") String titleParamValue) {
 		return bookService.getBook(titleParamValue);
 	}
