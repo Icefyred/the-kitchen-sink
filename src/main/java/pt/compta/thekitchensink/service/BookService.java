@@ -11,7 +11,9 @@ import pt.compta.thekitchensink.repository.BookRepository;
 public class BookService {
 	@Autowired
 	private BookRepository bookRepository;
-	private BookConverter bookConverter = new BookConverter();
+
+	@Autowired
+	private BookConverter bookConverter;
 
 	public Book getBook(String bookName) {
 		BookEntity book = null;
