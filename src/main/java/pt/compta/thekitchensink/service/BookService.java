@@ -1,5 +1,6 @@
 package pt.compta.thekitchensink.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pt.compta.thekitchensink.Book;
@@ -8,7 +9,8 @@ import pt.compta.thekitchensink.repository.BookRepository;
 
 @Service
 public class BookService {
-	private BookRepository bookRepository = new BookRepository();
+	@Autowired
+	private BookRepository bookRepository;
 	private BookConverter bookConverter = new BookConverter();
 
 	public Book getBook(String bookName) {

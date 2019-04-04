@@ -3,6 +3,9 @@ package pt.compta.thekitchensink.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class BookRepository {
 	private List<BookEntity> booksInMemory = new ArrayList<>();
 
