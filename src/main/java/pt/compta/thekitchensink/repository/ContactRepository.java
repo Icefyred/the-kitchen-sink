@@ -5,19 +5,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import pt.compta.thekitchensink.Contact;
-
 @Repository
 public class ContactRepository {
-	private List<Contact> contactsInMemory = new ArrayList<>();
+	private List<ContactEntity> contactsInMemory = new ArrayList<>();
 
-	public void insert(Contact contact) {
+	public void insert(ContactEntity contact) {
 		contactsInMemory.add(contact);
 	}
 
-	public Contact getByName(String stringValue) {
+	public ContactEntity getByName(String stringValue) {
 
-		for (Contact contact : contactsInMemory) {
+		for (ContactEntity contact : contactsInMemory) {
 			if (stringValue.equals(contact.getFirstName()) || stringValue.equals(contact.getLastName())) {
 				return contact;
 			}

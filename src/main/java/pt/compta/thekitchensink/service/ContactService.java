@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pt.compta.thekitchensink.Contact;
+import pt.compta.thekitchensink.repository.ContactEntity;
 import pt.compta.thekitchensink.repository.ContactRepository;
 
 @Service
@@ -11,19 +12,23 @@ public class ContactService {
 	@Autowired
 	private ContactRepository contactRepository;
 
+	@Autowired
+	private ContactConverter contactConverter;
+
 	public Contact getContact(String name) {
-		Contact contact = null;
+		ContactEntity contact = null;
 		if ((contact = contactRepository.getByName(name)) != null)
-			return contact;
+			return contactConverter.convert(contact);
 		else
 			throw new IllegalArgumentException();
 	}
 
 	public Contact createContact(Contact contact) {
+		ContactEntity entity = contactConverter.convertFromContactToContactEntity(contact);
 		if (doesContactExist(contact)) {
 			throw new IllegalArgumentException();
 		} else {
-			contactRepository.insert(contact);
+			contactRepository.insert(entity);
 		}
 		return contact;
 	}
