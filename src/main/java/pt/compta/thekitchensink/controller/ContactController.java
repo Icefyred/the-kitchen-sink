@@ -15,14 +15,18 @@ public class ContactController {
 	@Autowired
 	private ContactService contactService;
 
+	@Autowired
+	private ContactModelConverter contactModelConverter;
+
 	@GetMapping("/contacts")
-	public Contact contact(@RequestParam("name") String nameParamValue) {
-		return contactService.getContact(nameParamValue);
+	public ContactModel contact(@RequestParam("name") String nameParamValue) {
+		return contactModelConverter.convertFromContactToContactModel(contactService.getContact(nameParamValue));
 	}
 
 	@PostMapping("/contacts")
-	public Contact createContact(@RequestBody Contact contact) {
+	public ContactModel createContact(@RequestBody Contact contact) {
+		ContactModel contactModel = contactModelConverter.convertFromContactToContactModel(contact);
 		contactService.createContact(contact);
-		return contact;
+		return contactModel;
 	}
 }
