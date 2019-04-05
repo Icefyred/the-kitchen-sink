@@ -15,14 +15,18 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
+	@Autowired
+	private BookModelConverter bookModelConverter;
+
 	@GetMapping("/books")
-	public Book book(@RequestParam("title") String titleParamValue) {
-		return bookService.getBook(titleParamValue);
+	public BookModel book(@RequestParam("title") String titleParamValue) {
+		return bookModelConverter.convertFromBookToBookModel(bookService.getBook(titleParamValue));
 	}
 
 	@PostMapping("/books")
-	public Book createBook(@RequestBody Book book) {
+	public BookModel createBook(@RequestBody BookModel bookModel) {
+		Book book = bookModelConverter.convertFromBookModelToBook(bookModel);
 		bookService.createBookRepository(book);
-		return book;
+		return bookModel;
 	}
 }
