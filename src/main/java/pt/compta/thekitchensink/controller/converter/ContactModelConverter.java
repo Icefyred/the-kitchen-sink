@@ -3,7 +3,7 @@ package pt.compta.thekitchensink.controller.converter;
 import org.springframework.stereotype.Component;
 
 import pt.compta.thekitchensink.Contact;
-import pt.compta.thekitchensink.controller.ContactModel;
+import pt.compta.thekitchensink.controller.model.ContactModel;
 
 @Component
 public class ContactModelConverter {

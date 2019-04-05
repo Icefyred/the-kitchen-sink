@@ -1,4 +1,4 @@
-package pt.compta.thekitchensink.controller;
+package pt.compta.thekitchensink.controller.model;
 
 public class ContactModel {
 	private String firstName;

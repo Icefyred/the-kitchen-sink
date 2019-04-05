@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import pt.compta.thekitchensink.Contact;
 import pt.compta.thekitchensink.repository.ContactEntity;
 import pt.compta.thekitchensink.repository.ContactRepository;
+import pt.compta.thekitchensink.service.converter.ContactConverter;
 
 @Service
 public class ContactService {

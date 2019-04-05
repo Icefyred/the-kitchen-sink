@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import pt.compta.thekitchensink.Book;
 import pt.compta.thekitchensink.repository.BookEntity;
 import pt.compta.thekitchensink.repository.BookRepository;
+import pt.compta.thekitchensink.service.converter.BookConverter;
 
 @Service
 public class BookService {

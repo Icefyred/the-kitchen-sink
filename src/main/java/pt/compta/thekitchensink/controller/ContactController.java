@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pt.compta.thekitchensink.Contact;
 import pt.compta.thekitchensink.controller.converter.ContactModelConverter;
+import pt.compta.thekitchensink.controller.model.ContactModel;
 import pt.compta.thekitchensink.service.ContactService;
 
 @RestController

@@ -1,4 +1,4 @@
-package pt.compta.thekitchensink.service;
+package pt.compta.thekitchensink.service.converter;
 
 import org.springframework.stereotype.Component;
 
