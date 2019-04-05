@@ -25,7 +25,7 @@ public class BookService {
 	}
 
 	public Book createBookRepository(Book book) {
-		BookEntity entity = bookConverter.convertFromBookToBookEntity(book);
+		BookEntity entity = bookConverter.convert(book);
 		if (doesBookExist(book)) {
 			throw new IllegalArgumentException();
 		} else {

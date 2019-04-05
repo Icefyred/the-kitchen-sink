@@ -15,7 +15,7 @@ public class ContactConverter {
 		return new Contact(contactFirstName, contactLastName, contactPhoneNumber, contactEmailAddress);
 	}
 
-	public ContactEntity convertFromContactToContactEntity(Contact source) {
+	public ContactEntity convert(Contact source) {
 		String contactFirstName = source.getFirstName();
 		String contactLastName = source.getLastName();
 		int contactPhoneNumber = source.getPhoneNumber();

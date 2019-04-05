@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import pt.compta.thekitchensink.repository.ContactRepository;
 import pt.compta.thekitchensink.repository.entity.ContactEntity;
-import pt.compta.thekitchensink.service.component.EmailClient;
+import pt.compta.thekitchensink.service.client.EmailClient;
 import pt.compta.thekitchensink.service.converter.ContactConverter;
 import pt.compta.thekitchensink.service.domain.Contact;
 
@@ -29,7 +29,7 @@ public class ContactService {
 	}
 
 	public Contact createContact(Contact contact) {
-		ContactEntity entity = contactConverter.convertFromContactToContactEntity(contact);
+		ContactEntity entity = contactConverter.convert(contact);
 		if (doesContactExist(contact)) {
 			throw new IllegalArgumentException();
 		} else {

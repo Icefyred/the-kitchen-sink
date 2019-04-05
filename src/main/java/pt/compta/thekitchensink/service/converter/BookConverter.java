@@ -15,7 +15,7 @@ public class BookConverter {
 		return new Book(bookISBN, bookName, bookSummary);
 	}
 
-	public BookEntity convertFromBookToBookEntity(Book source) {
+	public BookEntity convert(Book source) {
 		String bookISBN = source.getBookISBN();
 		String bookName = source.getBookTitle();
 		String bookSummary = source.getBookDescription();
