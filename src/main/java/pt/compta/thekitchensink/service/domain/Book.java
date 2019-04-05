@@ -1,4 +1,4 @@
-package pt.compta.thekitchensink;
+package pt.compta.thekitchensink.service.domain;
 
 public class Book {
 	private String bookISBN;

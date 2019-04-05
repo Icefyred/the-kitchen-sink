@@ -3,10 +3,10 @@ package pt.compta.thekitchensink.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pt.compta.thekitchensink.Contact;
-import pt.compta.thekitchensink.repository.ContactEntity;
 import pt.compta.thekitchensink.repository.ContactRepository;
+import pt.compta.thekitchensink.repository.entity.ContactEntity;
 import pt.compta.thekitchensink.service.converter.ContactConverter;
+import pt.compta.thekitchensink.service.domain.Contact;
 
 @Service
 public class ContactService {

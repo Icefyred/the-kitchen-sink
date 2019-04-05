@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import pt.compta.thekitchensink.repository.entity.ContactEntity;
+
 @Repository
 public class ContactRepository {
 	private List<ContactEntity> contactsInMemory = new ArrayList<>();

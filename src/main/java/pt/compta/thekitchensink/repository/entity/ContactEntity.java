@@ -1,12 +1,12 @@
-package pt.compta.thekitchensink;
+package pt.compta.thekitchensink.repository.entity;
 
-public class Contact {
+public class ContactEntity {
 	private String firstName;
 	private String lastName;
 	private int phoneNumber;
 	private String emailAddress;
 
-	public Contact(String firstName, String lastName, int phoneNumber, String emailAddress) {
+	public ContactEntity(String firstName, String lastName, int phoneNumber, String emailAddress) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;

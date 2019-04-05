@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.compta.thekitchensink.Book;
 import pt.compta.thekitchensink.controller.converter.BookModelConverter;
 import pt.compta.thekitchensink.controller.model.BookModel;
 import pt.compta.thekitchensink.service.BookService;
+import pt.compta.thekitchensink.service.domain.Book;
 
 @RestController
 public class BookController {

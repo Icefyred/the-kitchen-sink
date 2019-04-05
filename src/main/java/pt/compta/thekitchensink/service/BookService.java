@@ -3,10 +3,10 @@ package pt.compta.thekitchensink.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pt.compta.thekitchensink.Book;
-import pt.compta.thekitchensink.repository.BookEntity;
 import pt.compta.thekitchensink.repository.BookRepository;
+import pt.compta.thekitchensink.repository.entity.BookEntity;
 import pt.compta.thekitchensink.service.converter.BookConverter;
+import pt.compta.thekitchensink.service.domain.Book;
 
 @Service
 public class BookService {

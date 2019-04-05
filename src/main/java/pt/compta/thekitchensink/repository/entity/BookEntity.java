@@ -1,4 +1,4 @@
-package pt.compta.thekitchensink.repository;
+package pt.compta.thekitchensink.repository.entity;
 
 public class BookEntity {
 

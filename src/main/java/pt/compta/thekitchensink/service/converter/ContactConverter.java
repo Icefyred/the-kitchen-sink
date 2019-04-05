@@ -2,8 +2,8 @@ package pt.compta.thekitchensink.service.converter;
 
 import org.springframework.stereotype.Component;
 
-import pt.compta.thekitchensink.Contact;
-import pt.compta.thekitchensink.repository.ContactEntity;
+import pt.compta.thekitchensink.repository.entity.ContactEntity;
+import pt.compta.thekitchensink.service.domain.Contact;
 
 @Component
 public class ContactConverter {

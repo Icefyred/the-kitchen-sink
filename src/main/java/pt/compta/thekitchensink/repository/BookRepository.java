@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import pt.compta.thekitchensink.repository.entity.BookEntity;
+
 @Repository
 public class BookRepository {
 	private List<BookEntity> booksInMemory = new ArrayList<>();

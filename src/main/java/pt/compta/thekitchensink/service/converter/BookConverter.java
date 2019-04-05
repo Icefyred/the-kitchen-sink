@@ -2,8 +2,8 @@ package pt.compta.thekitchensink.service.converter;
 
 import org.springframework.stereotype.Component;
 
-import pt.compta.thekitchensink.Book;
-import pt.compta.thekitchensink.repository.BookEntity;
+import pt.compta.thekitchensink.repository.entity.BookEntity;
+import pt.compta.thekitchensink.service.domain.Book;
 
 @Component
 public class BookConverter {
