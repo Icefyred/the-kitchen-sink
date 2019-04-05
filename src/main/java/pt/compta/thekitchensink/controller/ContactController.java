@@ -24,8 +24,8 @@ public class ContactController {
 	}
 
 	@PostMapping("/contacts")
-	public ContactModel createContact(@RequestBody Contact contact) {
-		ContactModel contactModel = contactModelConverter.convertFromContactToContactModel(contact);
+	public ContactModel createContact(@RequestBody ContactModel contactModel) {
+		Contact contact = contactModelConverter.convert(contactModel);
 		contactService.createContact(contact);
 		return contactModel;
 	}
