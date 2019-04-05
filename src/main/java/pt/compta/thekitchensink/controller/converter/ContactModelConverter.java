@@ -1,8 +1,9 @@
-package pt.compta.thekitchensink.controller;
+package pt.compta.thekitchensink.controller.converter;
 
 import org.springframework.stereotype.Component;
 
 import pt.compta.thekitchensink.Contact;
+import pt.compta.thekitchensink.controller.ContactModel;
 
 @Component
 public class ContactModelConverter {
