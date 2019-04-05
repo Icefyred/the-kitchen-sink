@@ -23,13 +23,13 @@ public class ContactService {
 	public Contact getContact(String name) {
 		ContactEntity contact = null;
 		if ((contact = contactRepository.getByName(name)) != null)
-			return contactConverter.convert(contact);
+			return contactConverter.convertFrom(contact);
 		else
 			throw new IllegalArgumentException();
 	}
 
 	public Contact createContact(Contact contact) {
-		ContactEntity entity = contactConverter.convert(contact);
+		ContactEntity entity = contactConverter.convertTo(contact);
 		if (doesContactExist(contact)) {
 			throw new IllegalArgumentException();
 		} else {

@@ -22,12 +22,12 @@ public class ContactController {
 
 	@GetMapping("/contacts")
 	public ContactModel contact(@RequestParam("name") String nameParamValue) {
-		return contactModelConverter.convertFromContactToContactModel(contactService.getContact(nameParamValue));
+		return contactModelConverter.convertTo(contactService.getContact(nameParamValue));
 	}
 
 	@PostMapping("/contacts")
 	public ContactModel createContact(@RequestBody ContactModel contactModel) {
-		Contact contact = contactModelConverter.convert(contactModel);
+		Contact contact = contactModelConverter.convertFrom(contactModel);
 		contactService.createContact(contact);
 		return contactModel;
 	}

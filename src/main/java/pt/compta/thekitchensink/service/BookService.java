@@ -19,13 +19,13 @@ public class BookService {
 	public Book getBook(String bookName) {
 		BookEntity book = null;
 		if ((book = bookRepository.getBookByName(bookName)) != null)
-			return bookConverter.convert(book);
+			return bookConverter.convertFrom(book);
 		else
 			throw new IllegalArgumentException();
 	}
 
 	public Book createBookRepository(Book book) {
-		BookEntity entity = bookConverter.convert(book);
+		BookEntity entity = bookConverter.convertTo(book);
 		if (doesBookExist(book)) {
 			throw new IllegalArgumentException();
 		} else {

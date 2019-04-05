@@ -22,12 +22,12 @@ public class BookController {
 
 	@GetMapping("/books")
 	public BookModel book(@RequestParam("title") String titleParamValue) {
-		return bookModelConverter.convertFromBookToBookModel(bookService.getBook(titleParamValue));
+		return bookModelConverter.convertTo(bookService.getBook(titleParamValue));
 	}
 
 	@PostMapping("/books")
 	public BookModel createBook(@RequestBody BookModel bookModel) {
-		Book book = bookModelConverter.convertFromBookModelToBook(bookModel);
+		Book book = bookModelConverter.convertFrom(bookModel);
 		bookService.createBookRepository(book);
 		return bookModel;
 	}
