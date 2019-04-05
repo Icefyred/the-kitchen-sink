@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.compta.thekitchensink.controller.converter.BookModelConverter;
+import pt.compta.thekitchensink.controller.converter.BookModelToBookConverter;
+import pt.compta.thekitchensink.controller.converter.BookToBookModelConverter;
 import pt.compta.thekitchensink.controller.model.BookModel;
 import pt.compta.thekitchensink.service.BookService;
 import pt.compta.thekitchensink.service.domain.Book;
@@ -18,16 +19,19 @@ public class BookController {
 	private BookService bookService;
 
 	@Autowired
-	private BookModelConverter bookModelConverter;
+	private BookModelToBookConverter bookModelToBookConverter;
+
+	@Autowired
+	private BookToBookModelConverter bookToBookModelConverter;
 
 	@GetMapping("/books")
 	public BookModel book(@RequestParam("title") String titleParamValue) {
-		return bookModelConverter.convertTo(bookService.getBook(titleParamValue));
+		return bookModelToBookConverter.convert(bookService.getBook(titleParamValue));
 	}
 
 	@PostMapping("/books")
 	public BookModel createBook(@RequestBody BookModel bookModel) {
-		Book book = bookModelConverter.convertFrom(bookModel);
+		Book book = bookToBookModelConverter.convert(bookModel);
 		bookService.createBookRepository(book);
 		return bookModel;
 	}

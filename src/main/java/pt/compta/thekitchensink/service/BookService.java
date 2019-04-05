@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 
 import pt.compta.thekitchensink.repository.BookRepository;
 import pt.compta.thekitchensink.repository.entity.BookEntity;
-import pt.compta.thekitchensink.service.converter.BookConverter;
+import pt.compta.thekitchensink.service.converter.BookEntityToBookConverter;
+import pt.compta.thekitchensink.service.converter.BookToBookEntityConverter;
 import pt.compta.thekitchensink.service.domain.Book;
 
 @Service
@@ -14,18 +15,21 @@ public class BookService {
 	private BookRepository bookRepository;
 
 	@Autowired
-	private BookConverter bookConverter;
+	private BookToBookEntityConverter bookToBookEntityConverter;
+
+	@Autowired
+	private BookEntityToBookConverter bookEntityToBookConverter;
 
 	public Book getBook(String bookName) {
 		BookEntity book = null;
 		if ((book = bookRepository.getBookByName(bookName)) != null)
-			return bookConverter.convertFrom(book);
+			return bookToBookEntityConverter.convert(book);
 		else
 			throw new IllegalArgumentException();
 	}
 
 	public Book createBookRepository(Book book) {
-		BookEntity entity = bookConverter.convertTo(book);
+		BookEntity entity = bookEntityToBookConverter.convert(book);
 		if (doesBookExist(book)) {
 			throw new IllegalArgumentException();
 		} else {

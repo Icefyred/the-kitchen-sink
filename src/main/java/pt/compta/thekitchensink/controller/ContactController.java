@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.compta.thekitchensink.controller.converter.ContactModelConverter;
+import pt.compta.thekitchensink.controller.converter.ContactModelToContactConverter;
+import pt.compta.thekitchensink.controller.converter.ContactToContactModelConverter;
 import pt.compta.thekitchensink.controller.model.ContactModel;
 import pt.compta.thekitchensink.service.ContactService;
 import pt.compta.thekitchensink.service.domain.Contact;
@@ -18,16 +19,19 @@ public class ContactController {
 	private ContactService contactService;
 
 	@Autowired
-	private ContactModelConverter contactModelConverter;
+	private ContactModelToContactConverter contactModelToContactConverter;
+
+	@Autowired
+	private ContactToContactModelConverter contactToContactModelConverter;
 
 	@GetMapping("/contacts")
 	public ContactModel contact(@RequestParam("name") String nameParamValue) {
-		return contactModelConverter.convertTo(contactService.getContact(nameParamValue));
+		return contactModelToContactConverter.convert(contactService.getContact(nameParamValue));
 	}
 
 	@PostMapping("/contacts")
 	public ContactModel createContact(@RequestBody ContactModel contactModel) {
-		Contact contact = contactModelConverter.convertFrom(contactModel);
+		Contact contact = contactToContactModelConverter.convert(contactModel);
 		contactService.createContact(contact);
 		return contactModel;
 	}

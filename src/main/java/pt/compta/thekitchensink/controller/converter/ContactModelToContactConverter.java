@@ -7,16 +7,9 @@ import pt.compta.thekitchensink.controller.model.ContactModel;
 import pt.compta.thekitchensink.service.domain.Contact;
 
 @Component
-public class ContactModelConverter implements Converter<ContactModel, Contact> {
-	public Contact convertFrom(ContactModel source) {
-		String contactFirstName = source.getFirstName();
-		String contactLastName = source.getLastName();
-		int contactPhoneNumber = source.getPhoneNumber();
-		String contactEmailAddress = source.getEmailAddress();
-		return new Contact(contactFirstName, contactLastName, contactPhoneNumber, contactEmailAddress);
-	}
+public class ContactModelToContactConverter implements Converter<ContactModel, Contact> {
 
-	public ContactModel convertTo(Contact source) {
+	public ContactModel convert(Contact source) {
 		String contactFirstName = source.getFirstName();
 		String contactLastName = source.getLastName();
 		int contactPhoneNumber = source.getPhoneNumber();
